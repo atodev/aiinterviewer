@@ -1,30 +1,62 @@
 {
   "expo": {
-    "name": "interviewer",
-    "slug": "interviewer",
+    "name": "AI Interviewer",
+    "slug": "ai-interviewer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#020617"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.aiinterviewer",
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Allow AI Interviewer to recognise your speech to transcribe your answers.",
+        "NSMicrophoneUsageDescription": "Allow AI Interviewer to use your microphone for speech recognition.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.yourname.aiinterviewer",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow AI Interviewer to use your microphone for speech recognition.",
+          "speechRecognitionPermission": "Allow AI Interviewer to recognise your speech to transcribe your answers."
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a79d99f7-9a42-4b95-90ce-312676d318f7"
+      }
     }
   }
 }
